@@ -25,8 +25,8 @@ const RegistrationForm: FC = () => {
     shouldFocusError: true,
     shouldUseNativeValidation: false,
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: ""
     },
   });
@@ -60,10 +60,10 @@ const RegistrationForm: FC = () => {
       <div className="input">
         <p className="label">First Name:</p>
         <Input
-          placeholder={errors.firstName ? errors.firstName.message : "First Name"}
+          placeholder={errors.first_name ? errors.first_name.message : "First Name"}
           type="text"
-          error={errors.firstName}
-          register={register("firstName", {
+          error={errors.first_name}
+          register={register("first_name", {
             required: "First name is required",
           })}
         />
@@ -72,10 +72,10 @@ const RegistrationForm: FC = () => {
       <div className="input">
         <p className="label">Last Name:</p>
         <Input
-          placeholder={errors.lastName ? errors.lastName.message : "Last Name"}
+          placeholder={errors.last_name ? errors.last_name.message : "Last Name"}
           type="text"
-          error={errors.lastName}
-          register={register("lastName", {
+          error={errors.last_name}
+          register={register("last_name", {
             required: "Last name is required",
           })}
         />
