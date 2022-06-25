@@ -48,37 +48,37 @@ const RegistrationForm: FC = () => {
       <div className="input">
         <p className="label">Email:</p>
         <Input
-          placeholder="Email"
+          placeholder={errors.email ? errors.email.message : "Email" }
           type="email"
+          error={errors.email}
           register={register("email", {
             required: "Email is required",
           })}
         />
-        <p>{errors.email?.message}</p>
       </div>
 
       <div className="input">
         <p className="label">First Name:</p>
         <Input
-          placeholder="First Name"
+          placeholder={errors.firstName ? errors.firstName.message : "First Name"}
           type="text"
+          error={errors.firstName}
           register={register("firstName", {
             required: "First name is required",
           })}
         />
-        <p>{errors.firstName?.message}</p>
       </div>
 
       <div className="input">
         <p className="label">Last Name:</p>
         <Input
-          placeholder="Last Name"
+          placeholder={errors.lastName ? errors.lastName.message : "Last Name"}
           type="text"
+          error={errors.lastName}
           register={register("lastName", {
             required: "Last name is required",
           })}
         />
-        <p>{errors.lastName?.message}</p>
       </div>
 
       {apiErrors && <p className="apiError">Something went wrong</p>}
