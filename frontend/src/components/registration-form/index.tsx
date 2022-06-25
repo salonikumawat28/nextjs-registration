@@ -81,7 +81,7 @@ const RegistrationForm: FC = () => {
         />
       </div>
 
-      {apiErrors && <p className="apiError">Something went wrong</p>}
+      {apiErrors && <p className="apiError">Something went wrong. Got error: {apiErrors}</p>}
 
       <div className="btnGroup">
         <Button color="yellow" type="submit" loading={dataSending}>

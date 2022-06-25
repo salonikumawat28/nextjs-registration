@@ -32,14 +32,12 @@ const model = createModel<RootModel>()({
 
       dispatch.registration.setRegistrationDataSending(false);
       // set errors if api not return id or redirect if return
-      if (!response?.error) {
+      if (response.status === 200) {
         router.push("success")
       } else {
-        if (response?.data?.errors) {
-          dispatch.registration.setRegistrationResponseErrors(
-            response.data.errors
-          );
-        }
+        dispatch.registration.setRegistrationResponseErrors(
+          response.statusText
+        );
       }
     },
 
