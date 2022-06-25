@@ -36,7 +36,7 @@ export async function request(url: string, config?: RequestConfig) {
   });
 
   const response = await fetch(fullURL, {
-    mode:"no-cors",
+    mode:"cors",
     headers: {
       ...headers,
       ...requestHeaders,
