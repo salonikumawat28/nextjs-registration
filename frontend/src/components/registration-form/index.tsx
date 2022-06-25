@@ -49,7 +49,7 @@ const RegistrationForm: FC = () => {
         <p className="label">Email:</p>
         <Input
           placeholder="Email"
-          type="text"
+          type="email"
           register={register("email", {
             required: "Email is required",
           })}
