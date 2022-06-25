@@ -1,0 +1,105 @@
+@import "~antd/dist/antd.css";
+/* stylelint-disable */
+
+// normally, we would configure antd's pimary color. However, for this we would
+// need to use the antd.less and configure a less loader. Since we'll remove
+// antd as dependency again, we set all color explicitly in this file. As soon
+// as antd is removed, we can remove this file again.
+$primary-color: #732f37;
+
+.ant-radio-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+  color: $primary-color;
+}
+
+.ant-picker-cell .ant-picker-cell-inner {
+  padding: 4px;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-radius: 50%;
+}
+
+.ant-table-ping-left:not(.ant-table-has-fix-left) .ant-table-container::before {
+  display: none;
+}
+
+.ant-table-ping-right:not(.ant-table-has-fix-right)
+  .ant-table-container::after {
+  display: none;
+}
+
+.ant-radio-group-solid
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+  color: #fff;
+  background: $primary-color;
+  border-color: $primary-color;
+}
+
+html {
+  --antd-wave-shadow-color: $primary-color;
+  --scroll-bar: 0;
+}
+
+.ant-radio-button-wrapper-checked:not([class*=" ant-radio-button-wrapper-disabled"]).ant-radio-button-wrapper:first-child {
+  border-right-color: $primary-color;
+}
+
+.ant-radio-group-solid
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  color: #fff;
+  background: $primary-color;
+  border-color: $primary-color;
+}
+
+.ant-radio-button-wrapper:hover {
+  color: $primary-color;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+  color: $primary-color;
+  border-color: $primary-color;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  z-index: 1;
+  color: $primary-color;
+  background: #fff;
+  border-color: $primary-color;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+  background-color: $primary-color;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover::before {
+  color: $primary-color;
+  border-color: $primary-color;
+  background-color: $primary-color;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):active {
+  color: $primary-color;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child {
+  border-color: $primary-color;
+}
+
+.ant-spin {
+  color: $primary-color;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within {
+  -webkit-box-shadow: 0 0 0 3px rgba(115, 47, 55, 0.08);
+  box-shadow: 0 0 0 3px rgba(115, 47, 55, 0.08);
+}
+
+.ant-message {
+  top: 3.5%;
+}
+/* stylelint-enable */

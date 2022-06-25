@@ -1,0 +1,203 @@
+@mixin typography {
+  h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .hint {
+    font-size: 0.8rem;
+  }
+}
+
+.pageContent {
+  @include typography;
+
+  padding: 59px 30px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+
+  .section {
+    margin-top: 1rem;
+  }
+}
+
+.modal {
+  @include typography;
+
+  .wrap {
+    padding: 59px 30px 30px 30px;
+  }
+
+  .header {
+    * {
+      float: left;
+    }
+  }
+
+  > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 20;
+  }
+
+  .section {
+    margin-top: 1rem;
+  }
+}
+
+.closeIcon {
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 20px;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+
+  img {
+    width: 1.5rem;
+    height: auto;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+  margin-top: 0.8rem;
+  min-height: 3rem;
+  padding: 0.8rem 0.8rem 0.8rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btnGroup {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  > input {
+    margin-bottom: 20px;
+  }
+
+  .input {
+    margin-bottom: 20px;
+
+    .label {
+      margin-bottom: 10px;
+      line-height: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .checkLabel {
+    font-size: 0.8rem;
+    line-height: 1rem;
+
+    a {
+      text-decoration: underline;
+      color: var(--color-blue);
+    }
+  }
+
+  .errorText {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.7rem;
+    line-height: 16px;
+    color: var(--color-red-error);
+    margin-top: 10px;
+  }
+
+  .apiError {
+    margin: 15px 0;
+    color: var(--color-red-error);
+  }
+}
+
+.leftIcon {
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 960px) {
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+
+    > div {
+      padding: 40px 30px;
+      position: relative;
+      max-width: 700px;
+
+      .closeIcon {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .pageContent {
+    padding: 129px 86px 30px 86px;
+  }
+
+  .rightContentPage {
+    padding: 90px 98px;
+    max-width: 600px;
+    margin-left: auto;
+    position: relative;
+    display: grid;
+    grid-template-rows: 70px auto;
+    grid-gap: 20px;
+
+    &::before {
+      content: "";
+      position: fixed;
+      height: 100%;
+      width: calc(100vw - 600px);
+      left: 0;
+      top: 0;
+      background-image: url("/img/loginMain.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
