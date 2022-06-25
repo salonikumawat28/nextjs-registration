@@ -49,7 +49,9 @@ const RegistrationForm: FC = () => {
         <Input
           placeholder="Email"
           type="text"
-          register={register("email")}
+          register={register("email", {
+            required: "Email is required",
+          })}
         />
       </div>
 
@@ -58,7 +60,9 @@ const RegistrationForm: FC = () => {
         <Input
           placeholder="First Name"
           type="text"
-          register={register("firstName")}
+          register={register("firstName", {
+            required: "First name is required",
+          })}
         />
       </div>
 
@@ -67,7 +71,9 @@ const RegistrationForm: FC = () => {
         <Input
           placeholder="Last Name"
           type="text"
-          register={register("lastName")}
+          register={register("lastName", {
+            required: "Last name is required",
+          })}
         />
       </div>
 
