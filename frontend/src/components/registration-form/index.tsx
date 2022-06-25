@@ -20,10 +20,13 @@ const RegistrationForm: FC = () => {
     register,
     handleSubmit,
   } = useForm<any>({
+    mode: 'onSubmit',
     shouldFocusError: true,
     shouldUseNativeValidation: false,
     defaultValues: {
-      phone_number: "+41",
+      firstName: "",
+      lastName: "",
+      email: ""
     },
   });
 
@@ -46,6 +49,7 @@ const RegistrationForm: FC = () => {
         <Input
           placeholder="Email"
           type="text"
+          register={register("email")}
         />
       </div>
 
@@ -54,14 +58,16 @@ const RegistrationForm: FC = () => {
         <Input
           placeholder="First Name"
           type="text"
+          register={register("firstName")}
         />
       </div>
 
       <div className="input">
-        <p className="label">Last Name</p>
+        <p className="label">Last Name:</p>
         <Input
           placeholder="Last Name"
           type="text"
+          register={register("lastName")}
         />
       </div>
 
