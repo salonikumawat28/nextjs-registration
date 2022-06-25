@@ -19,6 +19,7 @@ const RegistrationForm: FC = () => {
   const {
     register,
     handleSubmit,
+    formState: { errors }
   } = useForm<any>({
     mode: 'onSubmit',
     shouldFocusError: true,
@@ -53,6 +54,7 @@ const RegistrationForm: FC = () => {
             required: "Email is required",
           })}
         />
+        <p>{errors.email?.message}</p>
       </div>
 
       <div className="input">
@@ -64,6 +66,7 @@ const RegistrationForm: FC = () => {
             required: "First name is required",
           })}
         />
+        <p>{errors.firstName?.message}</p>
       </div>
 
       <div className="input">
@@ -75,6 +78,7 @@ const RegistrationForm: FC = () => {
             required: "Last name is required",
           })}
         />
+        <p>{errors.lastName?.message}</p>
       </div>
 
       {apiErrors && <p className="apiError">Something went wrong</p>}
